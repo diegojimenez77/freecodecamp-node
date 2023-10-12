@@ -412,3 +412,131 @@ Funcion callback = funcion que se pasa a otra funcion como argumento y luego se 
 Las promesas tienen un metodo .then(), con el cual podemos decidir que ocurre cuando se completa la promesa (exito o error)
 
 ## 3:31.19 - Ejemplo de promesas pizza.
+
+---
+
+## .catch() en JavaScript
+
+Metodo de promesa que solo se ejecuta si la promesa es rechazada.
+
+Codigo de sintaxis.
+
+.then(null, (mensajeDeError) => {
+console.log(mensajeDeError);
+});
+
+.catch((mensajeDeError) => {
+console.log(mensajeDeError);
+})
+
+## Method Chaining = es encadenar los metodos .then y .catch
+
+---
+
+## async await
+
+Chaninig promises = encadenar promesas
+
+4:13:00
+
+---
+
+## Metodo Cliente-servidor
+
+Modelo que usamos para acceder a internet y obtener recursos e informacion.
+Sin el modelo cliente servidor no existiria el internet.
+
+Cliente = El navegador desde el cual se realizan solicitudes a un servidor.
+Servidor = Programa que se ejecuta en un servidor fisico para ofrecer un servicio al cliente. Envia informacion.
+
+El servidor conoce el formato esperado del mensaje que envia el cliente.
+El cliente conoce tambien el formato esperado del mensaje que recibe del servidor.
+
+El protocolo HTTP define el formato de los mensajes.
+
+Protocolo = Conjunto de reglas que permiten transmitir informacion entre dispositivos de una red.
+
+Protocolo HTTP = Hyper Text Transfer Protocol
+
+Solicitudes HTTP = Cuando un cliene solicita informacion aun servidor solicita un Request.
+
+Solicitud HTTP elementos
+
+- Metodos HTTP - dicen que accion tomar en el servidor, si se piden recursos, modificar, agregar recursos nuevos.
+- Camino (path) - dice donde esta ese recurso
+- Version de HTTP - version
+- Cabeceras (headers) - proveen mayor info al servidor
+- Cuerpo (body) - si se necesita enviar alguna informacion al servidor, crear un usuario nuevo enviar la info de este usuario.
+
+Headers (cabeceras) - Proveen informacion adicional sobre la solicitud.
+Body (cuerpo) - Contiene la informacion que debe ser enviada al servidor para procesar la solicitud. (formato JSON)
+Body (cuerpo) - No se incluye en todas las solicitudes. Solo en aquellas que requieran enviar informacion. Por ejemplo: POST, PUT.
+
+HTTPs - agrega una capa extra de seguridada.
+
+---
+
+# Metodos HTTP
+
+Un metodo HTTP es un verbo o sustantivo que indica la intencion de la solicitud.
+Aunque tambien pueden ser sustantivos, frecuentemente se les denomina como "Verbos HTTP".
+Metodos mas comunues:
+
+- GET - verbo para solicitar un recurso especifico. Por ejemplo, un archivo HTML, CSS o una imagen.
+- POST - verbo para crear un recurso especifico. Por ejemplo, agregar un usuario nuevo a una base de datos.
+- PUT - verbo para modificar un recurso especifico. Por ejemplo, hacer un cambio en la base de datos.
+- DELETE - verbo para eliminar un recurso especifico. Por ejemplo, eliminar un usuario de una base de datos.
+- Otros...
+
+El cliente le dice al servidor que hacer por medio de los metodos.
+
+---
+
+# Respuestas HTTP
+
+Respuestas HTTP (response):
+
+- Codigo de estado
+- Texto de estado
+- Version de HTTP
+- Cabeceras (headers) - Son opcionales y proveen informacion adicional sobre la respuesta.
+- Cuerpo (body) - Contiene la informacion que debe ser enviada desde el servidor hacia el cliente.
+
+---
+
+# Codigos de Estado HTTP
+
+Son esenciales para que el cliente sepa que paso con la solicitud que acaba de enviar.
+Codigo de estado de respuesta HTTP: Numero que indica si se ha completado exitosamente la solicitud HTTP.
+
+- Respuestas informativas (100 - 199).
+- Respuestas satisfactorias (200 - 299).
+- Redirecciones (300-399).
+- Errores de los clientes (400-499).
+- Errores de los servidores (500-599)
+
+Con Node.js y Express podemos especificar el codigo de estado de la respuesta HTTP en nuestro servidor.
+
+Codigos de estado mas comunes:
+
+- 200 OK - La respuesta fue exitosa
+- 400 Bad Request - El servidor no pudo interpretar la solicitud.
+- 404 Not Found - El servidor no pudo encontrar el recurso solicitado.
+- 500 Internal Server Error - El servidor encontro una situacion que no sabe como manejar.
+
+---
+
+# Primer servidor con Node
+
+Modulo http = Este modulo le permite a Node.js transmitir informacion con el protocolo HTTP.
+
+const http - require('http');
+
+Crear un servidor con HTTP = 14-server.js
+4:36:00
+
+## Puerto = Ubicacion virtual del sistema operativo en la cual se puede acceder a una aplicacion o a un proceso especifico que este ejecutando en ese puerto.
+
+---
+
+# req & res 4:50:16
